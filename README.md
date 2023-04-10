@@ -16,7 +16,7 @@ Pull requests to add these are welcome!
 
 ## Copyright
 
-Copyright (c) 2017-2020 Anca Stefanoiu, Josue Page, and Tobias Lasser (original oLaF code)
+Copyright (c) 2017-2020 Anca Stefanoiu, Josue Page, and Tobias Lasser (original oLaF code)  
 Copyright (c) 2023 Lili Karashchuk (pyolaf)
 
 ## Citation
