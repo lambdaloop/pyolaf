@@ -47,9 +47,8 @@ def transform_img(img, ttnew, lens_offset):
     new_shape = np.floor(np.round(img.shape / scale) / 2) * 2 + 1
     new_shape = new_shape.astype('int32')
     offset = np.ceil(new_shape / 2) - lens_offset
-    # adding offset here causes discrepancy to matlab code
-    # it's likely difference between how matlab and scipy.ndimage handle
-    # translations across a fraction of a pixel
+    # this transformation has some discrepancy to matlab code
+    # it's the biggest discrepancy across the pipeline
     new = affine_transform(img, cupy.asarray(ttnew[:2, :2]),
                            offset=ttnew[:2,2],
                            output_shape=tuple(new_shape),
