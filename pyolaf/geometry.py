@@ -141,7 +141,7 @@ def LFM_processWhiteImage(WhiteImage, spacingPx, gridType, DebugBuildGridModel):
     GridModelOptions['ApproxLensletSpacing'] = spacingPx   # lensPitch / pixelPitch;
     GridModelOptions['Orientation'] = 'horz'
     GridModelOptions['FilterDiskRadiusMult'] = 1/3
-    GridModelOptions['CropAmt'] = 30 # changed from 30, gives better results
+    GridModelOptions['CropAmt'] = 10 # changed from 30, gives better results
     GridModelOptions['SkipStep'] = 10
     GridModelOptions['Precision'] = 'single'
 
@@ -278,13 +278,19 @@ def LFM_BuildLensletGridModel(WhiteImg, gridType, GridModelOptions, DebugDisplay
     RecPtsY = RecPtsY[3:-3]
     RecPtsX = RecPtsX[3:-3]
 
-    #--Estimate angle--
-    SlopeX = np.mean(LineFitX, axis=0)[0]
-    SlopeY = np.mean(LineFitY, axis=0)[0]
+    #--Estimate angle-
+    possible = []
+    if len(LineFitX) > 0:
+        SlopeX = np.mean(LineFitX, axis=0)[0]
+        AngleX = np.arctan2(-SlopeX, 1)
+        possible.append(AngleX)
 
-    AngleX = np.arctan2(-SlopeX, 1)
-    AngleY = np.arctan2(SlopeY, 1)
-    EstAngle = np.mean([AngleX, AngleY])
+    if len(LineFitY) > 0:
+        SlopeY = np.mean(LineFitY, axis=0)[0]
+        AngleY = np.arctan2(SlopeY, 1)
+        possible.append(AngleY)
+
+    EstAngle = np.mean(possible)
 
     #--Estimate spacing, assuming approx zero angle--
     # t = RecPtsY[:,:,1]
