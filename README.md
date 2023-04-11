@@ -6,7 +6,7 @@ pyolaf is a Python-based translation of the [oLaF](https://gitlab.lrz.de/IP/olaf
   
 The light field microscope (LFM) allows for 3D imaging of fluorescent specimens using an array of micro-lenses (MLA) that capture both spatial and directional light field information in a single shot. oLaF is a Matlab framework for 3D reconstruction of LFM data that makes use of advanced algorithms for artifact-free deconvolution and Fourier integral microscopy. 
 
-pyolaf brings these same features to the Python ecosystem, using GPU acceleration and some further code optimizations to *speed up deconvolution by 20x*. 
+pyolaf brings these same features to the Python ecosystem, using GPU acceleration and some further code optimizations to **speed up deconvolution by 20x**. 
 
 ## Limitations
 
