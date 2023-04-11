@@ -30,8 +30,8 @@ if has_cupy:
 
 
 
-# see this folder for samples:
-# https://drive.google.com/drive/folders/1clAUjal3P0a2owQrwGvdpUAoCHYwSecb?usp=share_link
+# see this url for samples:
+#   https://drive.google.com/drive/folders/1clAUjal3P0a2owQrwGvdpUAoCHYwSecb?usp=share_link
 
 # change this to your data path
 data_path = '/home/lili/data/light-field/samples-pyolaf/fly-muscles-GFP'
