@@ -41,21 +41,22 @@ fname_config = os.path.join(data_path, 'config.yaml')
 fname_img = os.path.join(data_path, 'example_fly.tif')
 
 WhiteImage = tifffile.imread(fname_calib)
-LensletImage = tifffile.imread(fname_img, key=0)
+LensletImage = tifffile.imread(fname_img)
+
 
 ## PARAMETERS
 # depth range (in mm)
-depthRange = [-150, 200]
+depthRange = [-300, 300]
 # depth step
-depthStep = 50
+depthStep = 150
 
 # choose lenslet spacing (in  pixels) to downsample the number of pixels between mlens for speed up
 newSpacingPx = 15
 # choose super-resolution factor as a multiple of lenslet resolution (= 1 voxel/lenslet)
-superResFactor = 10
+superResFactor = 5
 
 # window size for anti-aliasing filter
-lanczosWindowSize = 2
+lanczosWindowSize = 4
 # whether to enable the antialiasing filter
 filterFlag = True
 
@@ -110,6 +111,7 @@ onesForward = LFM_forwardProject(H, initVolume, LensletCenters, Resolution, imgS
 onesBack = LFM_backwardProject(Ht, onesForward, LensletCenters, Resolution, texSize, crange, step=8)
 
 # deconv algorithm
+print('run deconvolution on image...')
 LFimage = cupy.asarray(LFimage)
 reconVolume = cupy.asarray(np.copy(initVolume))
 
@@ -154,10 +156,8 @@ print('time', t2 - t1)
 
 import matplotlib.pyplot as plt
 
-m = np.max(vref['reconVolume'])
-
 plt.figure(1)
 plt.clf()
-plt.imshow(reconVolume_np[:, :, 0])
+plt.imshow(errorBack[:, :, 4])
 plt.draw()
 plt.show(block=False)
