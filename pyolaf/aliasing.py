@@ -40,11 +40,11 @@ def LFM_computeDepthAdaptiveWidth(Camera, Resolution):
 
     ## compute the depth dependent witdth of the anti-aliasing filters
     dz = Resolution["depths"]
-    zobj = Camera["fobj"] - dz
+    zobj = (Camera["fobj"] - dz).astype('float')
 
     # avoid division by zero
     for i in range(len(zobj)):
-        if(zobj[i] == Camera["fobj"] or zobj[i] == Camera["dof"]):
+        if(np.isclose(zobj[i], Camera["fobj"]) or np.isclose(zobj[i], Camera["dof"])):
             zobj[i] = zobj[i] + 0.00001*Camera["fobj"]
 
     # z1 -> where the objective will focus
