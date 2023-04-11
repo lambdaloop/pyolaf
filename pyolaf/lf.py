@@ -455,17 +455,13 @@ def LFM_computeBackwardPatterns(H, Resolution, crange, lensOrder):
             tempback = LFM_backwardProjectSinglePoint(H, Resolution, imgSize, texSize, currentPixel, lensletCenters, crange, lensOrder)
 
             # bring the backprojection to center (the operator assumes the bproj patterns are centered when applying them)
-            tempbackShift = [None]*nDepths
             for cc in range(nDepths):
                 backShiftX = np.round(Resolution["TexNnum_half"][0]-aa_tex).astype(int)
                 backShiftY = np.round(Resolution["TexNnum_half"][1]-bb_tex).astype(int)
                 shifted = imShift2(tempback[:,:,cc], backShiftX, backShiftY)
-                tempbackShift[cc] = csr_matrix(shifted)
                 # store the pattern
                 Ht[(aa_sensor,bb_sensor, cc)] = csr_matrix(shifted)
 
-            # store the pattern
-            # Ht[(aa_sensor,bb_sensor, cc)] = csr_matrix(tempbackShift)
 
 
     return Ht
@@ -634,14 +630,17 @@ def normalizeHt(Ht):
 
     for aa in range(Ht_sizes[0]):
         for bb in range(Ht_sizes[1]):
-            temp = np.concatenate(
-                [Ht[aa, bb, cc].todense() for cc in range(Ht_sizes[2])],
-                axis=1)
-            sum_temp = np.sum(temp)
+            sum_temp = 0
+            for c in range(Ht_sizes[2]):
+                sum_temp += Ht[aa, bb, c].sum()
+            # temp = np.concatenate(
+            #     [Ht[aa, bb, cc].toarray() for cc in range(Ht_sizes[2])],
+            #     axis=1)
+            # sum_temp = np.sum(temp)
             if np.isclose(sum_temp, 0):
                 continue
             for c in range(Ht_sizes[2]):
-                Ht[aa, bb, c] = csr_matrix(Ht[aa, bb, c] / sum_temp)
+                Ht[aa, bb, c] = Ht[aa, bb, c] / sum_temp
 
     return Ht
 
