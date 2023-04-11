@@ -141,7 +141,7 @@ def LFM_processWhiteImage(WhiteImage, spacingPx, gridType, DebugBuildGridModel):
     GridModelOptions['ApproxLensletSpacing'] = spacingPx   # lensPitch / pixelPitch;
     GridModelOptions['Orientation'] = 'horz'
     GridModelOptions['FilterDiskRadiusMult'] = 1/3
-    GridModelOptions['CropAmt'] = 30
+    GridModelOptions['CropAmt'] = 15 # changed from 30, gives better results
     GridModelOptions['SkipStep'] = 10
     GridModelOptions['Precision'] = 'single'
 
