@@ -24,7 +24,7 @@ setuptools.setup(
         "Topic :: Scientific/Engineering :: Bio-Informatics"
     ],
     install_requires=[
-        'pyyaml'
+        'pyyaml',
         'numpy',
         'scipy',
         'tqdm',
