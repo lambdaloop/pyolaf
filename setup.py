@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyolaf",
-    version="0.1.0",
+    version="0.2.0",
     author="Lili Karashchuk",
     author_email="krchtchk@gmail.com",
     description="3D reconstruction framework for light field microscopy",
