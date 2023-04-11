@@ -29,7 +29,8 @@ setuptools.setup(
         'scipy',
         'tqdm',
         'tifffile',
-        'scikit-image'
+        'scikit-image',
+        'matplotlib'
     ],
     extras_require={
         'gpu':  ["cupy"]
