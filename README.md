@@ -1,6 +1,6 @@
 # pyolaf - A Python-based 3D reconstruction framework for light field microscopy
 
-pyolaf is a Python-based translation of the [oLaF](https://gitlab.lrz.de/IP/olaf/) 3D reconstruction framework for light field microscopy (LFM). 
+pyolaf is a Python port of the [oLaF](https://gitlab.lrz.de/IP/olaf/) 3D reconstruction framework for light field microscopy (LFM). 
 
 ## Overview
   
@@ -16,8 +16,8 @@ Pull requests to add these are welcome!
 
 ## Copyright
 
-Copyright (c) 2017-2020 Anca Stefanoiu, Josue Page, and Tobias Lasser (original oLaF code)  
-Copyright (c) 2023 Lili Karashchuk (pyolaf)
+Copyright (c) 2017-2020 Anca Stefanoiu, Josue Page, and Tobias Lasser -- original oLaF code  
+Copyright (c) 2023 Lili Karashchuk -- pyolaf
 
 ## Citation
 
