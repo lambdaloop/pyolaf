@@ -2,6 +2,7 @@
 
 import numpy as np
 import time
+from tqdm import trange
 
 def LFM_computePSFsize(maxDepth, Camera):
     ## geometric blur radius at the MLA
@@ -366,9 +367,8 @@ def LFM_computeForwardPatternsWaves(psfWaveStack, MLARRAY, Camera, Resolution):
     # Resolution['texScaleFactor(1/2)'] is actually (Resolution['texRes(1/2)'] * M / Resolution['sensorRes(1/2)'])^-1
     H = np.empty((coordsRange[0], coordsRange[1], len(Resolution['depths'])),
                  dtype='object')
-    for c in range(len(Resolution['depths'])):
-        print('Forward Patterns, depth:', c+1, '/', len(Resolution['depths']))
-
+    for c in trange(len(Resolution['depths']), ncols=70, desc=' forward patterns'):
+        # print('Forward Patterns, depth:', c+1, '/', len(Resolution['depths']))
         psfREF = psfWaveStack[:,:,c]
         for i in range(coordsRange[0]):
             for j in range(coordsRange[1]):
@@ -443,8 +443,8 @@ def LFM_computeBackwardPatterns(H, Resolution, crange, lensOrder):
     # Iterate through every pixel behind the central micro-lens and compute
     # which part of the texture (object) affects it.
 
-    for aa_sensor in range(coordsRange[0]):
-        print('Backward patterns, x: {}/{}'.format(aa_sensor+1, coordsRange[0]))
+    for aa_sensor in trange(coordsRange[0], ncols=70, desc='backward patterns'):
+        # print('Backward patterns, x: {}/{}'.format(aa_sensor+1, coordsRange[0]))
         aa_tex = np.ceil((1+aa_sensor) * Resolution["texScaleFactor"][0]).astype(int)  # compute the corresponding coord of "aa_sensor" pixel in real world space
         for bb_sensor in range(coordsRange[1]):
             bb_tex = np.ceil((1+bb_sensor) * Resolution["texScaleFactor"][1]).astype(int)  # compute the corresponding coord of "bb_sensor" pixel in real world space
