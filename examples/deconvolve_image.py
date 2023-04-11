@@ -158,6 +158,6 @@ import matplotlib.pyplot as plt
 
 plt.figure(1)
 plt.clf()
-plt.imshow(errorBack[:, :, 4])
+plt.imshow(reconVolume_np[:, :, 0])
 plt.draw()
 plt.show(block=False)
