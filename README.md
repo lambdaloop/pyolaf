@@ -27,7 +27,7 @@ Raw image a fly from light field microscope, showing the 10k+ lenslets in the mi
 <img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.gif" width="50%">
 </p>
 <p align="center">
-Volume reconstructed from the image, shown as successive slices in a gif. See also the [higher resolution video](https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4). 
+Volume reconstructed from the image, shown as successive slices in a gif. See also the <a href="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4">higher resolution video</a>. 
 </p>
 
 
