@@ -82,7 +82,6 @@ def LFM_calcPSFAllDepths(Camera, Resolution):
     print('...')
     return psfWaveStack
 
-import numba
 from scipy import integrate, special
 import scipy.special
 
