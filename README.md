@@ -14,6 +14,24 @@ pyolaf only supports regular grids and single-focus conventional light-field mic
 In particular Fourier LFM, hexagonal grids, and multi-focus lenslets are currently not supported.
 Pull requests to add these are welcome!
 
+## Demos
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_raw.png" width="70%" >
+</p>
+<p align="center">
+Raw image from light field microscope, showing the 10k+ lenslets in the microlens array, acquired within <a href=http://faculty.washington.edu/tuthill/>Tuthill Lab</a>
+</p>
+
+<p align="center">
+<video src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4" width="70%" />
+</p>
+<p align="center">
+Volume reconstructed from the image, shown as successive slices in a video
+</p>
+
+
+
 ## Copyright
 
 Copyright (c) 2017-2020 Anca Stefanoiu, Josue Page, and Tobias Lasser -- original oLaF code  
