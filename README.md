@@ -17,19 +17,18 @@ Pull requests to add these are welcome!
 ## Demos
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_raw.png" width="70%" >
+<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_raw.png" width="50%" >
 </p>
 <p align="center">
-Raw image from light field microscope, showing the 10k+ lenslets in the microlens array, acquired within <a href=http://faculty.washington.edu/tuthill/>Tuthill Lab</a>
+Raw image a fly from light field microscope, showing the 10k+ lenslets in the microlens array, acquired within <a href=http://faculty.washington.edu/tuthill/>Tuthill Lab</a>
 </p>
 
 <p align="center">
-<video src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4" width="70%" />
+<video src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4" width="640" controls></video>
 </p>
 <p align="center">
-Volume reconstructed from the image, shown as successive slices in a video
+Volume reconstructed from the image, shown as successive slices in a video.
 </p>
-
 
 
 ## Copyright
