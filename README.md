@@ -17,17 +17,14 @@ Pull requests to add these are welcome!
 ## Demos
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_raw.png" width="50%" >
+<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_raw.png" width="40%" >
+<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.gif" width="40%">
 </p>
-<p align="center">
-Raw image a fly from light field microscope, showing the 10k+ lenslets in the microlens array, acquired within <a href=http://faculty.washington.edu/tuthill/>Tuthill Lab</a>
+<p align="left">
+(Left) Raw image a fly from light field microscope, showing the 10k+ lenslets in the microlens array, acquired within <a href=http://faculty.washington.edu/tuthill/>Tuthill Lab</a>
 </p>
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.gif" width="50%">
-</p>
-<p align="center">
-Volume reconstructed from the image, shown as successive slices in a gif. See also the <a href="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4">higher resolution video</a>. 
+<p align="right">
+(Right) Volume reconstructed from the image, shown as successive slices in a gif. See also the <a href="https://raw.githubusercontent.com/lambdaloop/pyolaf/main/img/fly_volume.mp4">higher resolution video</a>.
 </p>
 
 
